@@ -8,7 +8,7 @@ export type Square = {
 export const whosHereAPI = createApi({
   reducerPath: "whosHereAPI",
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.API_URL,
+    baseUrl: "https://whos-here-api-production.up.railway.app",
   }),
   tagTypes: ["Square"],
   endpoints: (builder) => ({
