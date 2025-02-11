@@ -8,7 +8,7 @@ export type Square = {
 export const whosHereAPI = createApi({
   reducerPath: "whosHereAPI",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000",
+    baseUrl: process.env.API_URL,
   }),
   tagTypes: ["Square"],
   endpoints: (builder) => ({

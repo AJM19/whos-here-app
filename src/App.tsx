@@ -22,8 +22,8 @@ function App() {
   }, []);
 
   const clickHandler = async (id: number, value: boolean) => {
-    SquareSocket.emit("UPDATED", { id, value });
     await updateSquare({ id: id, value: value });
+    SquareSocket.emit("UPDATED", { id, value });
   };
 
   if (!squares) {
@@ -76,7 +76,7 @@ const Box = styled.button<{ $isActive: boolean }>`
   cursor: pointer;
   position: relative;
 
-  transition: background 0.75s ease-in-out;
+  transition: background 0.5s ease-in-out;
   padding: 0;
 
   img {
@@ -86,7 +86,7 @@ const Box = styled.button<{ $isActive: boolean }>`
     object-position: center;
     opacity: 0;
 
-    transition: opacity 0.75s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
   }
 
   ${({ $isActive }) =>
