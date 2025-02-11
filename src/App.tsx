@@ -32,7 +32,23 @@ function App() {
 
   return (
     <StyledContainer>
-      <Title>See who's here...</Title>
+      <div
+        style={{
+          position: "sticky",
+          top: "0",
+          zIndex: "100",
+          width: "100%",
+          height: "fit-content",
+          background: "white",
+        }}
+      >
+        <Title>See who's here...</Title>
+        <p style={{ color: "black", textAlign: "center" }}>
+          Each update is from someone else using the site, who's on the other
+          end?
+        </p>
+      </div>
+
       <GridContainer>
         {squares.map((sq, i) => (
           <Box
@@ -51,8 +67,9 @@ function App() {
 export default App;
 
 const StyledContainer = styled.div`
-  height: 100%;
+  height: calc(100%- 20px);
   width: 100%;
+  padding: 10px 0;
 `;
 
 const Title = styled.h1`
