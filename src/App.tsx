@@ -78,6 +78,10 @@ const Box = styled.button<{ $isActive: boolean }>`
 
   transition: background 0.5s ease-in-out;
   padding: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid lightgrey;
 
   img {
     height: 100%;
