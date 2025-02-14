@@ -2,7 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export type Square = {
   id: number;
-  value: boolean;
+  value: string;
+  color?: string;
 };
 
 export const whosHereAPI = createApi({
@@ -22,12 +23,13 @@ export const whosHereAPI = createApi({
       },
     }),
     updateSquare: builder.mutation<void, Square>({
-      query: ({ id, value }) => ({
+      query: ({ id, value, color = "black" }) => ({
         url: `/update-square`,
         method: "POST",
         body: {
           id,
           value,
+          color,
         },
       }),
     }),
