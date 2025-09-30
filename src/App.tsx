@@ -69,7 +69,13 @@ function App() {
           <u>Choose your color:</u>
         </p>
         <div
-          style={{ display: "inline-flex", alignItems: "center", gap: "5px" }}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "5px",
+            width: "100%",
+            justifyContent: "center",
+          }}
         >
           {COLORS.map((color) => (
             <ColorCircle
@@ -82,17 +88,21 @@ function App() {
         <p style={{ color: "black" }}>
           <u>Enter Initials Below and Click Away!</u>
         </p>
-        <input
-          style={{
-            background: "white",
-            color: selectedColor,
-            fontSize: "15pt",
-            width: "50px",
-            textAlign: "center",
-          }}
-          maxLength={2}
-          onChange={(x) => setInitials(x.target.value)}
-        />
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <input
+            style={{
+              background: "white",
+              color: selectedColor,
+              fontSize: "15pt",
+              width: "70px",
+              textAlign: "center",
+            }}
+            maxLength={2}
+            onChange={(x) => setInitials(x.target.value)}
+          />
+        </div>
       </div>
 
       <GridContainer>
